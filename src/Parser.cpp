@@ -3,7 +3,7 @@
 // Syntactical Analysis
 
 AST *Parser::parse() {
-    AST 8Res = parseCalc();
+    AST *Res = parseCalc();
     expect(Token::eoi);
     return Res;
 }
@@ -54,10 +54,10 @@ Expr *Parser::parseExpr() {
 Expr *Parser::parseTerm() {
     Expr *Left = parseFactor();
     while (Tok.isOneOf(Token::star, Token::slash)) {
-        BinaryOp::Operator Op Tok.is(Token::star) ? BinaryOp::Mul
+        BinaryOp::Operator Op = Tok.is(Token::star) ? BinaryOp::Mul
                                                   : BinaryOp::Div;
         advance();
-        Expr *Right() = parseFactor();
+        Expr *Right = parseFactor();
         Left = new BinaryOp(Op, Left, Right);           
     }
     return Left;

@@ -37,7 +37,7 @@ public:
 
 private:
     ValueKind Kind;
-    llvm:::StringRef Val;
+    llvm::StringRef Val;
 
 public:
     Factor(ValueKind Kind, llvm::StringRef Val)

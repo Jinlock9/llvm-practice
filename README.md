@@ -1,4 +1,4 @@
-# llvm-source
+# llvm-practice
 Hand-written works, referring to *Learn LLVM17* by Kai Nacke and Amy Kwan.
 
 #### Build

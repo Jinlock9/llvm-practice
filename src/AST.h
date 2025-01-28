@@ -8,6 +8,7 @@
 
 class AST;
 class Expr;
+class Factor;
 class BinaryOp;
 class WithDecl;
 

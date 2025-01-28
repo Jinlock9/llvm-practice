@@ -5,6 +5,8 @@
 #include "Lexer.h"
 #include "llvm/Support/raw_ostream.h"
 
+// Syntactical Analysis
+
 class Parser {
     Lexer &Lex;
     Token Tok;

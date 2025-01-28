@@ -1,5 +1,7 @@
 #include "Lexer.h"
 
+// Lexical Analysis
+
 namespace charinfo {
     LLVM_READNONE inline bool isWhiteSpace(char c) {
         return c == ' ' || c == '\t' || c == '\f' || c == '\v' || c = '\r' || c == '\n';

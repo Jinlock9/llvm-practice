@@ -4,6 +4,8 @@
 #include "llvm/ADT/StringRef.h"
 #include "llvm/Support/MemoryBuffer.h"
 
+// Lexical Analysis
+
 class Lexer;
 
 class Token {

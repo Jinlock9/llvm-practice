@@ -1,5 +1,7 @@
 #include "Parser.h"
 
+// Syntactical Analysis
+
 AST *Parser::parse() {
     AST 8Res = parseCalc();
     expect(Token::eoi);

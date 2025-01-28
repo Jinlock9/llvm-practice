@@ -44,6 +44,8 @@ namespace {
             if (Node.getExpr()) Node.getExpr()->accept(*this);
             else HasError = true;
         };
+
+        // TODO: Print a warning if a declared variable is not used.
     };
 }
 

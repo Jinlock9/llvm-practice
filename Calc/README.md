@@ -3,7 +3,31 @@
 ### `Calc`
 An expression calculation language.
 
-#### Extended Backus-Naur Form:
+---
+
+### Project Layout
+```yaml
+Project: Calc
+ ├── README.md
+ ├── CMakeLists.txt
+ └── src
+      ├── AST.h
+      ├── Calc.cpp
+      ├── CMakeLists.txt
+      ├── CodeGen.cpp
+      ├── CodeGen.h
+      ├── Lexer.cpp
+      ├── Lexer.h
+      ├── Parser.cpp
+      ├── Parser.h
+      ├── rtcalc.c
+      ├── Sema.cpp
+      ├── Sema.h
+```
+
+---
+
+### Extended Backus-Naur Form:
 ```bash
 calc   : ("with" ident ("," ident)* ":") ? expr;
 expr   : term (( "+" | "-" ) term)* ;
@@ -13,32 +37,12 @@ ident  : ([a-zAZ])+ ;
 number : ([0-9])+ ;
 ```
 
-#### Example:
+### Example:
 ```bash
 with a, b: a * (a + b)
 
 3 + 4 * 5
 ```
-
----
-
-### Project Layout
-- ./Calc:
-    - README.md
-    - CMakeLists.txt
-    - ./src:
-        - AST.h: A
-        - Calc.cpp
-        - CMakeList.txt
-        - CodeGen.cpp
-        - CodeGen.h
-        - Lexer.cpp
-        - Lexer.h
-        - Parser.cpp
-        - Parser.h
-        - rtcalc.c
-        - Sema.cpp
-        - Sema.h  
 
 ---
 

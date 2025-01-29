@@ -1,4 +1,4 @@
-# Frontend `Calc`
+# `Calc`
 
 ### `Calc`
 An expression calculation language.

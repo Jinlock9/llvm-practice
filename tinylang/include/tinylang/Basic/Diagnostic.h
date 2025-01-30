@@ -11,35 +11,35 @@
 
 namespace tinylang {
 
-namespace diag {
-enum {
+    namespace diag {
+        enum {
 #define DIAG(ID, Level, Msg) ID,
 #include "tinylang/Basic/Diagnostic.def"
-};
-} // namespace diag
+        };
+    } // namespace diag
 
-class DiagnosticEngine {
-    static const char *getDiagnosticText(unsigned DiagID);
-    static SourceMgr::DiagKind getDiagnosticKind(unsigned DiagID); // return level
+    class DiagnosticEngine {
+        static const char *getDiagnosticText(unsigned DiagID);
+        static SourceMgr::DiagKind getDiagnosticKind(unsigned DiagID); // return level
 
-    SourceMgr &SrcMgr;
-    unsigned NumErrors;
+        SourceMgr &SrcMgr;
+        unsigned NumErrors;
 
-public:
-    DiagnosticEngine(SourceMgr &SrcMgr) : SrcMgr(SrcMgr), NumErrors(0) {}
+    public:
+        DiagnosticEngine(SourceMgr &SrcMgr) : SrcMgr(SrcMgr), NumErrors(0) {}
 
-    unsigned numErrors() { return NumErrors; }
+        unsigned numErrors() { return NumErrors; }
 
-    template <typename... Args>
-    void report(SMLoc Loc, unsigned DiagID, Args &&... Arguments) {
-        std::string Msg = llvm::formatv(getDiagnosticText(DiagID),
-                                        std::forward<Args>(Arguments)...
-                                        ).str();
-        SourceMgr::DiagKind Kind = getDiagnosticKind(DiagID);
-        SrcMgr.printMessage(Loc, Kind, Msg);
-        NumErrors += (Kind == SourceMgr::DK_Error);
-    }
-};
+        template <typename... Args>
+        void report(SMLoc Loc, unsigned DiagID, Args &&... Arguments) {
+            std::string Msg = llvm::formatv(getDiagnosticText(DiagID),
+                                            std::forward<Args>(Arguments)...
+                                            ).str();
+            SourceMgr::DiagKind Kind = getDiagnosticKind(DiagID);
+            SrcMgr.printMessage(Loc, Kind, Msg);
+            NumErrors += (Kind == SourceMgr::DK_Error);
+        }
+    };
 
 } // namespace tinylang
 

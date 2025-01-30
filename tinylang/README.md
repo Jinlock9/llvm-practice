@@ -10,23 +10,23 @@ We are going to use the subset of `Modula-2` which is **`tinylang`**.
 ### Project Layout
 ```yaml
 Project: tinylang
- ├── cmake:
+ ├── cmake
  │   └── modules
- ├── include:
+ ├── include
  │   └── tinylang
  │       ├── AST
  │       ├── Basic
  │       ├── Lexer
  │       ├── Parser
  │       └── Sema
- ├── lib:
+ ├── lib
  │   ├── AST
  │   ├── Basic
  │   ├── Lexer
  │   ├── Parser
  │   └── Sema
  ├── tinylang
- └── tools:
+ └── tools
      └── driver
 ```
 
